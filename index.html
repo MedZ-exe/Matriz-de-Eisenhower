@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Matriz de Eisenhower</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Matriz Eisenhower</h1>
+        
+    </div>
+    <div class="matrix">
+        <!-- Quadrante: Urgente e Importante -->
+        <div class="quadrant" id="urgent-important" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Urgente e Importante</h2>
+            <div class="post-it-container" id="post-its-urgent-important" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div>
+                <input type="text" id="new-task-urgent-important" placeholder="Nova Tarefa">
+                <button onclick="addTask('post-its-urgent-important', 'new-task-urgent-important')">Adicionar Tarefa</button>
+            </div>
+            <!-- Adicione dentro do div.matrix -->
+<div class="tasks-container" id="tasks-container">
+    <!-- Conteúdo das tarefas será adicionado dinamicamente aqui -->
+</div>
+
+        </div>
+
+        <!-- Quadrante: Não Urgente, mas Importante -->
+        <div class="quadrant" id="not-urgent-important" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Não Urgente, mas Importante</h2>
+            <div class="post-it-container" id="post-its-not-urgent-important" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div>
+                <input type="text" id="new-task-not-urgent-important" placeholder="Nova Tarefa">
+                <button onclick="addTask('post-its-not-urgent-important', 'new-task-not-urgent-important')">Adicionar Tarefa</button>
+            </div>
+        </div>
+
+        <!-- Quadrante: Urgente, mas Não Importante -->
+        <div class="quadrant" id="urgent-not-important" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Urgente, mas Não Importante</h2>
+            <div class="post-it-container" id="post-its-urgent-not-important" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div>
+                <input type="text" id="new-task-urgent-not-important" placeholder="Nova Tarefa">
+                <button onclick="addTask('post-its-urgent-not-important', 'new-task-urgent-not-important')">Adicionar Tarefa</button>
+            </div>
+        </div>
+
+        <!-- Quadrante: Não Urgente e Não Importante -->
+        <div class="quadrant" id="not-urgent-not-important" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Não Urgente e Não Importante</h2>
+            <div class="post-it-container" id="post-its-not-urgent-not-important" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div>
+                <input type="text" id="new-task-not-urgent-not-important" placeholder="Nova Tarefa">
+                <button onclick="addTask('post-its-not-urgent-not-important', 'new-task-not-urgent-not-important')">Adicionar Tarefa</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <footer>
+        <p>&copy; 2023 Emerson Junior - Math-exe. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
