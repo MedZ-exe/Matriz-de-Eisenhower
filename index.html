@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/fullcalendar/main.css">
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="node_modules/fullcalendar/main.js"></script>
+    
     <title>Matriz de Eisenhower</title>
 </head>
 <body>
     <div class="header">
         <h1>Matriz Eisenhower</h1>
-        
+        <input type="date" id="selected-date" onchange="showTasks()" aria-label="Selecione uma data">
     </div>
     <div class="matrix">
         <!-- Quadrante: Urgente e Importante -->
@@ -17,14 +21,10 @@
             <h2>Urgente e Importante</h2>
             <div class="post-it-container" id="post-its-urgent-important" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             <div>
-                <input type="text" id="new-task-urgent-important" placeholder="Nova Tarefa">
+                <label for="new-task-urgent-important">Nova Tarefa:</label>
+                <input type="text" id="new-task-urgent-important" placeholder="Adicionar Tarefa">
                 <button onclick="addTask('post-its-urgent-important', 'new-task-urgent-important')">Adicionar Tarefa</button>
             </div>
-            <!-- Adicione dentro do div.matrix -->
-<div class="tasks-container" id="tasks-container">
-    <!-- Conteúdo das tarefas será adicionado dinamicamente aqui -->
-</div>
-
         </div>
 
         <!-- Quadrante: Não Urgente, mas Importante -->
@@ -32,7 +32,8 @@
             <h2>Não Urgente, mas Importante</h2>
             <div class="post-it-container" id="post-its-not-urgent-important" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             <div>
-                <input type="text" id="new-task-not-urgent-important" placeholder="Nova Tarefa">
+                <label for="new-task-not-urgent-important">Nova Tarefa:</label>
+                <input type="text" id="new-task-not-urgent-important" placeholder="Adicionar Tarefa">
                 <button onclick="addTask('post-its-not-urgent-important', 'new-task-not-urgent-important')">Adicionar Tarefa</button>
             </div>
         </div>
@@ -42,7 +43,8 @@
             <h2>Urgente, mas Não Importante</h2>
             <div class="post-it-container" id="post-its-urgent-not-important" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             <div>
-                <input type="text" id="new-task-urgent-not-important" placeholder="Nova Tarefa">
+                <label for="new-task-urgent-not-important">Nova Tarefa:</label>
+                <input type="text" id="new-task-urgent-not-important" placeholder="Adicionar Tarefa">
                 <button onclick="addTask('post-its-urgent-not-important', 'new-task-urgent-not-important')">Adicionar Tarefa</button>
             </div>
         </div>
@@ -52,11 +54,14 @@
             <h2>Não Urgente e Não Importante</h2>
             <div class="post-it-container" id="post-its-not-urgent-not-important" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             <div>
-                <input type="text" id="new-task-not-urgent-not-important" placeholder="Nova Tarefa">
+                <label for="new-task-not-urgent-not-important">Nova Tarefa:</label>
+                <input type="text" id="new-task-not-urgent-not-important" placeholder="Adicionar Tarefa">
                 <button onclick="addTask('post-its-not-urgent-not-important', 'new-task-not-urgent-not-important')">Adicionar Tarefa</button>
             </div>
         </div>
     </div>
+
+    <div id="calendar"></div>
 
     <script src="app.js"></script>
     <footer>
